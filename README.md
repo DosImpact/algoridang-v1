@@ -80,7 +80,7 @@ docker pull redis:latest
 # run
 
 docker run -d \
-  -e REDIS_PASSWORD=dosimpact\
+  -e REDIS_PASSWORD=password \
   -p 6381:6379 \
   --name redis_algoridang_dev \
   --restart always \
@@ -137,20 +137,20 @@ DATABASE_rejectUnauthorized = true
 DATABASE_URL = postgres://postgres:dosimpact@133.123.123.123:5432/main
 
 # jwt key 
-JWT_SECRET_KEY = wKaJ4ACioBn7jatUbOg7_U0ahdRMVlC7_TO2WPT9Hfq
+JWT_SECRET_KEY = password
 
 # aws config
 AWS_CONFIG_REGION = ap-northeast-2
 AWS_S3_BUCKET_NAME = algoridang
-AWS_S3_ACCESS_KEY = ZKIA2Z5OSqtqtTIB4BUZ
-AWS_S3_SECRET_ACCESS_KEY = ZOcptayA2KunXQ7lQnejtFqtkyh69L8ZzqWWF1sZ
+AWS_S3_ACCESS_KEY = password
+AWS_S3_SECRET_ACCESS_KEY = password
 
 # redis-api cache
 REDIS_API_CACHE_TTL = 2
-REDIS_API_CACHE_URL = redis://:dosimpact@133.133.123.123:6380
-# redis-cli -h 15.165.123.123 -p 6381 -a dosimpact
+REDIS_API_CACHE_URL = redis://:PASSWORD@HOST:PORT
+# redis-cli -h 15.165.123.123 -p 6381 -a PASSWORD
 # dataServerUrl
-DATA_SERVER_URL = http://123.123.103.188:5000
+DATA_SERVER_URL = HOST:PORT
 
 ```
 
@@ -211,8 +211,8 @@ module.exports = {
       "JWT_SECRET_KEY" : "123123123",
       "AWS_CONFIG_REGION" : "ap-northeast-2",
       "AWS_S3_BUCKET_NAME" : "algoridang",
-      "AWS_S3_ACCESS_KEY" : "123123123",
-      "AWS_S3_SECRET_ACCESS_KEY" : "123123123",
+      "AWS_S3_ACCESS_KEY" : "PASSWORD",
+      "AWS_S3_SECRET_ACCESS_KEY" : "PASSWORD",
       // redis-cli -h 123.123.123.123 -p 6381 -a dosimpact
       "REDIS_API_CACHE_TTL" : 30,
       "REDIS_API_CACHE_TTL_FINANCIAL":86400,
